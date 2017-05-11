@@ -2,7 +2,7 @@
 class Calculator
 
   def add(a, b)
-    a+b
+    0
   end
 
   def subtract(a, b)
