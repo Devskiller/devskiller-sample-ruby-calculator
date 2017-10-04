@@ -1,13 +1,12 @@
-# DevSKiller programming task sample - Ruby with rake
+# Devskiller programming task sample - Ruby with rake
 
 ## Introduction
 
-With [DevSKiller.com](https://devskiller.com) you can assess candidates' programming skills during your recruitment process. Programming tasks are the best way to test candidates programming skills. The candidate is asked to modify source code of an existing project.
+With [Devskiller.com](https://devskiller.com) you can assess candidates' programming skills during your recruitment process. Programming tasks are the best way to test candidates programming skills. The candidate is asked to modify source code of an existing project.
 
 During the test, the candidate is allowed to edit the source code of the project with our browser-based code editor and can build the project inside the browser at any time. Candidate can also download the project code and edit it locally with the favorite IDE.
 
-Check out how the test looks from candidate's perspective: [Candidate campaign preview](https://www.youtube.com/watch?v=rB4fViXPh5E).
-
+Check out how the test looks from [candidate's perspective](https://help.devskiller.com/candidate-documentation/how-the-devskiller-test-looks-like-from-the-candidate-perspective).
 
 This repo contains an example project for Ruby with rake, below you can find a detailed guide for creating your own programming project. 
 
@@ -15,7 +14,7 @@ This repo contains an example project for Ruby with rake, below you can find a d
 
 ## Technical details for Ruby with rake support
 
-Any **Ruby with rake** project might be used as a programming task. We use [CI::Reporter](https://github.com/ci-reporter/ci_reporter) for running unit tests, so any test framework supported by CI::Reporter (Cucumber, Minitest, RSpec, Spinach or Test::Unit) might be used for unit tests. Our sample proejct uses Minitest framework.
+Any **Ruby with rake** project might be used as a programming task. We use [CI::Reporter](https://github.com/ci-reporter/ci_reporter) for running unit tests, so any test framework supported by CI::Reporter (Cucumber, Minitest, RSpec, Spinach or Test::Unit) might be used for unit tests. Our sample project uses Minitest framework.
 
 Your project will be executed with following commands:
 
@@ -53,9 +52,9 @@ There are two kinds of unit tests:
 
 After candidate finishes the test, our platform builds the project posted by the candidate and executes verification tests and static code analysis.
 
-## DevSKiller project descriptor
+## Devskiller project descriptor
 
-Programming task can be configured with the DevSKiller project descriptor file. Just create a `devskiller.json` file and place it in the root directory of your project. Here is an example project descriptor:
+Programming task can be configured with the Devskiller project descriptor file. Just create a `devskiller.json` file and place it in the root directory of your project. Here is an example project descriptor:
 
 ```json
 {
