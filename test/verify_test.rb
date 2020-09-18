@@ -1,7 +1,6 @@
 require 'test_helper'
 
 class VerificationCalcTest < Minitest::Test
-
   def setup
     @calculator = Calculator.new
   end
