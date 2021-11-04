@@ -1,17 +1,17 @@
 class Calculator
-  def add(_a, _b)
+  def add(a, b)
     0
   end
 
   def subtract(a, b)
-    a - b
+    0
   end
 
   def multiply(a, b)
-    a * b
+    0
   end
 
   def divide(a, b)
-    a.to_f / b
+    0
   end
 end
