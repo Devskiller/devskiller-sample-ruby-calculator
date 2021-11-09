@@ -26,10 +26,8 @@ projects](https://devskiller.zendesk.com/hc/en-us/articles/360019531059-Getting-
 ## Technical details
 
 Any **Ruby with rake** project might be used as a programming task. We use
-[CI::Reporter](https://github.com/ci-reporter/ci_reporter) for running unit
-tests, so any test framework supported by CI::Reporter (Cucumber, Minitest,
-RSpec, Spinach or Test::Unit) can be used for unit tests. Our sample project
-uses the Minitest framework.
+[Minitest::Reporter](https://github.com/minitest-reporters/minitest-reporters) 
+for running unit tests.
 
 Your project will be executed with following commands:
 
@@ -38,20 +36,26 @@ bundle install
 bundle exec rake ci
 ```
 
-To enable tests execution on the platform you will have to define a `ci` task
-in your `Rakefile`, that will setup `CI::Reporter` for the chosen test
-framework. Here is an example for the Minitest framework:
+To enable tests execution on the platform you will have to define a `ci` task in your `Rakefile` and setup `Minitest::Reporter`:
+
+`test/test_helper.rb`:
 
 ```ruby
-require 'ci/reporter/rake/minitest'
+require 'minitest/reporters'
 
-task :ci => ['ci:setup:minitest', 'test']
+Minitest::Reporters.use! [Minitest::Reporters::SpecReporter.new, Minitest::Reporters::JUnitReporter.new]
 ```
 
-Of course, it is mandatory to add a dependency to `CI:Reporter` in Gemfile:
+Rakefile:
+
+```
+task ci: ['test']
+```
+
+Of course, it is mandatory to add a dependency to `Minitest::Reporter` in Gemfile:
 
 ```ruby
-gem 'ci_reporter_minitest'
+gem 'minitest-reporters'
 ```
 
 You can look at the  sample project files for a full working example.
